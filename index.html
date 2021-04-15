@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Let's play Simon!</h1>
+    <div id="backgroundContainer" class="parentBox">
+        <div id="startDirectionContainer">
+            <button class="clickButtons" id="startButton">Start</button>
+            <button class="clickButtons" id="directionsButton">Directions</button>
+        </div>
+        <div id="levelAndPointsContainer">
+            <div id="level" class="movingUp">level</div>
+            <div id="points" class="movingUp">points</div>
+        </div>
+    
+        <div id="gameContent">
+            <div id="characterBox" class="theFunStuff">Character
+                <input type="text">
+            </div>
+            <div id="simonGameContainer" class="theFunStuff">
+                <div class="gameButtons" id="green"></div>
+                <div id="redAndYellow">
+                    <div class="gameButtons" id="red"></div>
+                    <div class="gameButtons" id="yellow"></div>
+                </div>
+                <div class="gameButtons" id="blue"></div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
