@@ -53,62 +53,84 @@ var myVar = ''
 // } 
 
 const generateARandomSimonColor = () => {
-    var newColor = Math.floor(Math.random() * (4 - 1) ) + 1;
+    var newColor = Math.floor(Math.random() * (4 - 1)) + 1;
     generatedSimonColors.push(newColor)
 }
 const gettingColorInput = (i) => {
     console.log("User clicked " + i)
     userSimonColors.push(i)
 }
-console.log(userSimonColors)
+
 // document.getElementById("one").style = "background-color: white"
 // document.getElementById("one").style = "background-color: green"
 
 
 const flashTheSimonColors = () => {
-    console.log('flashTheSimonColors')
-    for(let i = 0 ; i <= generatedSimonColors.length -1 ; i++){
+    
+    for (let i = 0; i <= generatedSimonColors.length - 1; i++) {
         // needs to change from origianl color to white
         // stays white for one second
         // then back to orginal color
         let timeForInt = 1000
         // let howManyTimesInIf = 1
 
-        if(generatedSimonColors[i] == 1){
-            console.log('in the green')
-            // howManyTimesInIf +=1
-            setTimeout(function(){
+        if (generatedSimonColors[i] == 1) {
+            
 
-                document.getElementById("one").style = "background-color: white"
+            setTimeout(function () {
 
-            }, timeForInt * howManyTimesInIf); 
+                document.getElementById("one").style = "background-color: white";
+                
+            }, (((i + 1) * 2) - 1) * 1000);
 
-            setTimeout(function(){
+            setTimeout(function () {
 
-                document.getElementById("one").style = "background-color: green" 
-
-            }, timeForInt); 
+                document.getElementById("one").style = "background-color: green";
+                
+            }, ( (i + 1) * 2 * 1000) );
 
             //  document.getElementById("one").style = "background-color: green"
         }
-        else if(generatedSimonColors[i] == 2){
-            console.log('in the red')
-           
-            setTimeout(function(){
+        else if (generatedSimonColors[i] == 2) {
+            
+
+            setTimeout(function () {
                 document.getElementById("two").style = "background-color: white"
                 
-            }, timeForInt); 
-            setTimeout(function(){
-                        document.getElementById("two").style = "background-color: red"
-                        
-            }, timeForInt); 
+            }, (((i + 1) * 2) - 1) * 1000);
+            setTimeout(function () {
+                document.getElementById("two").style = "background-color: red"
+                
+            }, ( (i + 1) * 2 * 1000) );
         }
-        else if(generatedSimonColors[i] == 3){
-            console.log('in the yellow')
+        else if (generatedSimonColors[i] == 3) {
+            setTimeout(function () {
+
+                document.getElementById("three").style = "background-color: white";
+                
+            }, (((i + 1) * 2) - 1) * 1000);
+
+            setTimeout(function () {
+
+                document.getElementById("three").style = "background-color: yellow";
+                
+            }, ( (i + 1) * 2 * 1000) );
 
         }
-        else if(generatedSimonColors[i] == 4){
-            console.log('in the blue')
+        else if (generatedSimonColors[i] == 4) {
+            
+
+            setTimeout(function () {
+
+                document.getElementById("four").style = "background-color: white";
+                
+            }, (((i + 1) * 2) - 1) * 1000);
+
+            setTimeout(function () {
+
+                document.getElementById("four").style = "background-color: blue";
+                
+            }, ( (i + 1) * 2 * 1000) );
 
         }
     }
@@ -116,6 +138,6 @@ const flashTheSimonColors = () => {
 }
 
 
-generatedSimonColors = [1, 2]
+generatedSimonColors = [4 , 4, 3, 3, 2, 2, 1 , 2 ,3 ,4]
 flashTheSimonColors()
-console.log()  
+console.log()
