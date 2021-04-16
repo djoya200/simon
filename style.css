@@ -72,17 +72,17 @@
 #redAndYellow{
     display: flex;
 }
-#green{
+#one{
     background-color: green;
 }
-#red{
+#two{
     background-color: red;
     margin-right: 60px;
 }
-#yellow{
+#three{
     background-color: yellow;
     margin-left: 60px;
 }
-#blue{
+#four{
     background-color: blue;
 }
