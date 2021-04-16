@@ -6,10 +6,6 @@ console.log('simon app.js')
 // -create buttons for start 
 // -create button for directions
 
-
-
-
-// =============  HERE ->  ================
 // when game starts:
 // -use Math.random to generate random patterns
 // -Math.floor(Math.random()*4)
@@ -19,6 +15,8 @@ console.log('simon app.js')
 
 // when users click the buttons that square flashes and then thier 
 // answer is pushed into another array. 
+
+// =============  HERE ->  ================
 
 // -set conditionals to see  if they are ==== to 
 // eachother then they proceed to the next level
@@ -48,10 +46,37 @@ var generatedSimonColors = []
 var userSimonColors = []
 var myVar = ''
 
-// const whenTheGameStarts() => {
-// 
-// } 
+const whenTheGameStarts = () => {
+    generateARandomSimonColor() 
+    flashTheSimonColors()
+} 
+const checkingTheColors = () => {
+    console.log("checkingTheColors")
+    console.log(userSimonColors)
+    console.log(generatedSimonColors)
+    // take these two lines out ^
 
+    if(userSimonColors.length  === generatedSimonColors.length){
+        console.log(userSimonColors.length + " length")
+    let  isItWrong = false
+        for(let i = 0; i < generatedSimonColors.length; i++){
+           
+            if(userSimonColors[i] !== generatedSimonColors[i]){
+                isItWrong = true
+            }
+        }
+
+console.log("isItWrong ==  " + isItWrong)
+       if(isItWrong === false){ 
+        userSimonColors = []
+        generateARandomSimonColor()
+        flashTheSimonColors()
+       }
+    //     else {
+    //        make an alert that says "you lose"
+    //    }
+    }
+}
 const generateARandomSimonColor = () => {
     var newColor = Math.floor(Math.random() * (4 - 1)) + 1;
     generatedSimonColors.push(newColor)
@@ -59,6 +84,7 @@ const generateARandomSimonColor = () => {
 const gettingColorInput = (i) => {
     console.log("User clicked " + i)
     userSimonColors.push(i)
+    checkingTheColors()
 }
 
 // document.getElementById("one").style = "background-color: white"
@@ -138,6 +164,4 @@ const flashTheSimonColors = () => {
 }
 
 
-generatedSimonColors = [4 , 4, 3, 3, 2, 2, 1 , 2 ,3 ,4]
-flashTheSimonColors()
-console.log()
+
