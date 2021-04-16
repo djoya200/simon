@@ -13,6 +13,24 @@
         <div id="startDirectionContainer">
             <button class="clickButtons" id="startButton" onclick="whenTheGameStarts()">Start</button>
             <button class="clickButtons" id="directionsButton">Directions</button>
+            <div id="directionsModal">
+                <div class="directionsModalContent">
+                    <span class="close">&times;</span>
+                    <p> 1. Click on the Start button. <br>
+
+                        2. After you click the Start button, Simon will give the first signal. Repeat the signal by clicking the same color lens.<br>
+                        
+                        3. Simon will duplicate the first signal and add one. Repeat these two signals by pressing the same color lenses, in order.<br>
+                        
+                        4. Simon will duplicate these first two signals and add one.<br>
+                        
+                        5. Continue playing as long as you can repeat each sequence of signals correctly. <br>
+
+                        
+                        6. If you fail to repeat a sequence exactly Simon responds with a "RAZZ" sound. <br>
+                        This means you've lost, and the sequence of signals ends.</p>
+                </div>
+            </div>
         </div>
         <div id="levelAndPointsContainer">
             <div id="level" class="movingUp">level</div>
@@ -40,7 +58,7 @@
 
 
     </div>
-    
+    <!-- <div class="youLose">You Lost. Try again!</div> -->
     <script src="app.js"></script>
 </body>
 </html>

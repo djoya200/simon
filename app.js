@@ -16,23 +16,22 @@ console.log('simon app.js')
 // when users click the buttons that square flashes and then thier 
 // answer is pushed into another array. 
 
-// =============  HERE ->  ================
-
 // -set conditionals to see  if they are ==== to 
 // eachother then they proceed to the next level
+
+// add one more color/number to the game array 
+// after that show the flashes again and check the answers users click again. 
+
+// -use .push to push random number into an array from Math.floor
+// -use .push to push answers from DOM into an array
+
+//  =============  HERE ->  ================
 
 // popup box says: 
 // -create pop up windows for when they proceed to the next level 
 // -have baloons or confetti for when they win
 
-// add one more color/number to the game array 
-
-// after that show the flashes again and check the answers users click again. 
-
 // -create pop up window for when they lose
-
-// -use .push to push random number into an array from Math.floor
-// -use .push to push answers from DOM into an array
 
 // -possibly create two backgrounds one for knights and a dragon 
 // -one for princess finding her rabbit
@@ -63,11 +62,13 @@ const checkingTheColors = () => {
            
             if(userSimonColors[i] !== generatedSimonColors[i]){
                 isItWrong = true
+                window.alert("You Lose. Try again!")
             }
         }
 
 console.log("isItWrong ==  " + isItWrong)
        if(isItWrong === false){ 
+        window.alert("Congratulations! Proceed to the next level.")
         userSimonColors = []
         generateARandomSimonColor()
         flashTheSimonColors()
@@ -163,5 +164,19 @@ const flashTheSimonColors = () => {
 
 }
 
+// ----------------------directions modal---------------------------
 
-
+var modal = document.getElementById("directionsModal");
+var btn = document.getElementById("directionsButton");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
