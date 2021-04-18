@@ -46,21 +46,21 @@ var userSimonColors = []
 var myVar = ''
 
 const whenTheGameStarts = () => {
-    generateARandomSimonColor() 
+    generateARandomSimonColor()
     flashTheSimonColors()
-} 
+}
 const checkingTheColors = () => {
     console.log("checkingTheColors")
     console.log(userSimonColors)
     console.log(generatedSimonColors)
     // take these two lines out ^
 
-    if(userSimonColors.length  === generatedSimonColors.length){
+    if (userSimonColors.length === generatedSimonColors.length) {
         console.log(userSimonColors.length + " length")
-    let  isItWrong = false
-        for(let i = 0; i < generatedSimonColors.length; i++){
-           
-            if(userSimonColors[i] !== generatedSimonColors[i]){
+        let isItWrong = false
+        for (let i = 0; i < generatedSimonColors.length; i++) {
+
+            if (userSimonColors[i] !== generatedSimonColors[i]) {
                 isItWrong = true
                 // window.alert("You Lose. Try again!")
                 // modalLoseOn()
@@ -69,14 +69,16 @@ const checkingTheColors = () => {
         }
 
         console.log("isItWrong ==  " + isItWrong)
-       if(isItWrong === false){ 
-        window.alert("Congratulations! Proceed to the next level.")
-        userSimonColors = []
-        generateARandomSimonColor()
-        flashTheSimonColors()
-       }else{
-        modalLoseOn()
-       }
+        if (isItWrong === false) {
+            document.getElementById("level").innerHTML = "Level: " + generatedSimonColors.length
+            document.getElementById("points").innerHTML = "Points: " + generatedSimonColors.length * 100
+            window.alert("Congratulations! Proceed to the next level.")
+            userSimonColors = []
+            generateARandomSimonColor()
+            flashTheSimonColors()
+        } else {
+            modalLoseOn()
+        }
     }
 }
 const generateARandomSimonColor = () => {
@@ -94,7 +96,7 @@ const gettingColorInput = (i) => {
 
 
 const flashTheSimonColors = () => {
-    
+
     for (let i = 0; i <= generatedSimonColors.length - 1; i++) {
         // needs to change from origianl color to white
         // stays white for one second
@@ -103,62 +105,62 @@ const flashTheSimonColors = () => {
         // let howManyTimesInIf = 1
 
         if (generatedSimonColors[i] == 1) {
-            
+
 
             setTimeout(function () {
 
                 document.getElementById("one").style = "background-color: white";
-                
+
             }, (((i + 1) * 2) - 1) * 1000);
 
             setTimeout(function () {
 
                 document.getElementById("one").style = "background-color: green";
-                
-            }, ( (i + 1) * 2 * 1000) );
+
+            }, ((i + 1) * 2 * 1000));
 
             //  document.getElementById("one").style = "background-color: green"
         }
         else if (generatedSimonColors[i] == 2) {
-            
+
 
             setTimeout(function () {
                 document.getElementById("two").style = "background-color: white"
-                
+
             }, (((i + 1) * 2) - 1) * 1000);
             setTimeout(function () {
                 document.getElementById("two").style = "background-color: red"
-                
-            }, ( (i + 1) * 2 * 1000) );
+
+            }, ((i + 1) * 2 * 1000));
         }
         else if (generatedSimonColors[i] == 3) {
             setTimeout(function () {
 
                 document.getElementById("three").style = "background-color: white";
-                
+
             }, (((i + 1) * 2) - 1) * 1000);
 
             setTimeout(function () {
 
                 document.getElementById("three").style = "background-color: yellow";
-                
-            }, ( (i + 1) * 2 * 1000) );
+
+            }, ((i + 1) * 2 * 1000));
 
         }
         else if (generatedSimonColors[i] == 4) {
-            
+
 
             setTimeout(function () {
 
                 document.getElementById("four").style = "background-color: white";
-                
+
             }, (((i + 1) * 2) - 1) * 1000);
 
             setTimeout(function () {
 
                 document.getElementById("four").style = "background-color: blue";
-                
-            }, ( (i + 1) * 2 * 1000) );
+
+            }, ((i + 1) * 2 * 1000));
 
         }
     }
@@ -170,32 +172,32 @@ const flashTheSimonColors = () => {
 var modal = document.getElementById("directionsModal");
 var btn = document.getElementById("directionsButton");
 var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-  modal.style.display = "block";
+btn.onclick = function () {
+    modal.style.display = "block";
 }
-span.onclick = function() {
-  modal.style.display = "none";
-}
-window.onclick = function(event) {
-  if (event.target == modal) {
+span.onclick = function () {
     modal.style.display = "none";
-  }
+}
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
 
 // ----------------------losing modal---------------------------
 var losingModal = document.getElementById("losingModal");
 var LosingSpan = document.getElementsByClassName("close")[1];
 
-LosingSpan.onclick = function() {
+LosingSpan.onclick = function () {
     losingModal.style.display = "none";
 }
-window.onclick = function(event) {
-  if (event.target == losingModal) {
-    losingModal.style.display = "none";
-  }
+window.onclick = function (event) {
+    if (event.target == losingModal) {
+        losingModal.style.display = "none";
+    }
 }
 modalLoseOn = () => {
     console.log("modal lose called")
     document.getElementById("losingModal").style.display = "block"
-  }
+}
 
