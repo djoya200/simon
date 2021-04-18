@@ -6,6 +6,12 @@
     height: 100vh;
     width: 100vw;
 }
+/* ------------------header------------------------ */
+.letsPlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /* ------------start and directions buttons-------------- */
 #startDirectionContainer{
     border: lime solid 3px;
@@ -36,7 +42,7 @@
 .movingUp{
     border: turquoise solid 3px;
     height: 40px;
-    width: 100px;
+    width: 200px;
     font-size: 18pt; 
     text-align: center;
 }
@@ -68,6 +74,7 @@
     border: solid orange 3px;
     width: 120px;
     height: 120px;
+    border-radius: 20%;
 }
 #redAndYellow{
     display: flex;

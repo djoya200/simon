@@ -72,10 +72,17 @@ const checkingTheColors = () => {
         if (isItWrong === false) {
             document.getElementById("level").innerHTML = "Level: " + generatedSimonColors.length
             document.getElementById("points").innerHTML = "Points: " + generatedSimonColors.length * 100
-            window.alert("Congratulations! Proceed to the next level.")
+           
             userSimonColors = []
             generateARandomSimonColor()
             flashTheSimonColors()
+                if(generatedSimonColors.length == 16){
+                    window.alert("YOU WIN!!!!!")
+                }else{
+                    window.alert("Congratulations! Proceed to the next level.")
+                }
+            
+
         } else {
             modalLoseOn()
         }

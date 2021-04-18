@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Let's play Simon!</h1>
+    <div class="letsPlay">
+        <h1>Let's play Simon!</h1>
+    </div>
     <div id="backgroundContainer" class="parentBox">
         <div id="startDirectionContainer">
             <button class="clickButtons" id="startButton" onclick="whenTheGameStarts()">Start</button>
@@ -18,15 +22,17 @@
                     <span class="close">&times;</span>
                     <p> 1. Click on the Start button. <br>
 
-                        2. After you click the Start button, Simon will give the first signal. Repeat the signal by clicking the same color lens.<br>
-                        
-                        3. Simon will duplicate the first signal and add one. Repeat these two signals by pressing the same color lenses, in order.<br>
-                        
+                        2. After you click the Start button, Simon will give the first signal. Repeat the signal by
+                        clicking the same color lens.<br>
+
+                        3. Simon will duplicate the first signal and add one. Repeat these two signals by pressing the
+                        same color lenses, in order.<br>
+
                         4. Simon will duplicate these first two signals and add one.<br>
-                        
+
                         5. Continue playing as long as you can repeat each sequence of signals correctly. <br>
 
-                        
+
                         6. If you fail to repeat a sequence exactly Simon responds with a "RAZZ" sound. <br>
                         This means you've lost, and the sequence of signals ends.</p>
                 </div>
@@ -36,10 +42,13 @@
             <div id="level" class="movingUp">Level: </div>
             <div id="points" class="movingUp">Points: </div>
         </div>
-    
+
         <div id="gameContent">
-            <div id="characterBox" class="theFunStuff">Character
-                <input type="text">
+            <div id="characterBox" class="theFunStuff">
+                <div class="tenor-gif-embed" data-postid="20473506" data-share-method="host" data-width="100%"
+                    data-aspect-ratio="1.0"><a href="https://tenor.com/view/o2-o2bubl-bubl-bubble-cute-gif-20473506">O2
+                        O2Bubl GIF</a> from <a href="https://tenor.com/search/o2-gifs">O2 GIFs</a></div>
+                <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
             </div>
             <div id="simonGameContainer" class="theFunStuff">
                 <button class="gameButtons" id="one" onclick="gettingColorInput(1)"></button>
@@ -49,15 +58,23 @@
                 </div>
                 <button class="gameButtons" id="four" onclick="gettingColorInput(4)"></button>
             </div>
+            <div id="characterBox" class="theFunStuff">
+                <div class="tenor-gif-embed" data-postid="20473507" data-share-method="host" data-width="100%"
+                    data-aspect-ratio="1.0"><a href="https://tenor.com/view/o2-o2bubl-bubl-bubble-cute-gif-20473507">O2
+                        O2Bubl GIF</a> from <a href="https://tenor.com/search/o2-gifs">O2 GIFs</a></div>
+                <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            </div>
         </div>
+
         <div id="losingModal">
             <div class="youLostModal">
                 <span class="close">&times;</span>
                 <p>You lost. Try again!</p>
+            </div>
+
         </div>
-        
-    </div>
-    <!-- <div class="youLose">You Lost. Try again!</div> -->
-    <script src="app.js"></script>
+        <!-- <div class="youLose">You Lost. Try again!</div> -->
+        <script src="app.js"></script>
 </body>
+
 </html>
