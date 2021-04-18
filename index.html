@@ -33,8 +33,8 @@
             </div>
         </div>
         <div id="levelAndPointsContainer">
-            <div id="level" class="movingUp">level</div>
-            <div id="points" class="movingUp">points</div>
+            <div id="level" class="movingUp">Level: </div>
+            <div id="points" class="movingUp">Points: </div>
         </div>
     
         <div id="gameContent">
@@ -42,21 +42,20 @@
                 <input type="text">
             </div>
             <div id="simonGameContainer" class="theFunStuff">
-                <!-- <div class="gameButtons" id="one"></div> -->
                 <button class="gameButtons" id="one" onclick="gettingColorInput(1)"></button>
                 <div id="redAndYellow">
-                    <!-- <div class="gameButtons" id="two"></div> -->
                     <button class="gameButtons" id="two" onclick="gettingColorInput(2)"></button>
-                    <!-- <div class="gameButtons" id="three"></div> -->
                     <button class="gameButtons" id="three" onclick="gettingColorInput(3)"></button>
                 </div>
                 <button class="gameButtons" id="four" onclick="gettingColorInput(4)"></button>
-
             </div>
         </div>
-
-
-
+        <div id="losingModal">
+            <div class="youLostModal">
+                <span class="close">&times;</span>
+                <p>You lost. Try again!</p>
+        </div>
+        
     </div>
     <!-- <div class="youLose">You Lost. Try again!</div> -->
     <script src="app.js"></script>

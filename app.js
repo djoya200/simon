@@ -62,20 +62,21 @@ const checkingTheColors = () => {
            
             if(userSimonColors[i] !== generatedSimonColors[i]){
                 isItWrong = true
-                window.alert("You Lose. Try again!")
+                // window.alert("You Lose. Try again!")
+                // modalLoseOn()
+                // youLostThisGame
             }
         }
 
-console.log("isItWrong ==  " + isItWrong)
+        console.log("isItWrong ==  " + isItWrong)
        if(isItWrong === false){ 
         window.alert("Congratulations! Proceed to the next level.")
         userSimonColors = []
         generateARandomSimonColor()
         flashTheSimonColors()
+       }else{
+        modalLoseOn()
        }
-    //     else {
-    //        make an alert that says "you lose"
-    //    }
     }
 }
 const generateARandomSimonColor = () => {
@@ -180,3 +181,21 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+// ----------------------losing modal---------------------------
+var losingModal = document.getElementById("losingModal");
+var LosingSpan = document.getElementsByClassName("close")[1];
+
+LosingSpan.onclick = function() {
+    losingModal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == losingModal) {
+    losingModal.style.display = "none";
+  }
+}
+modalLoseOn = () => {
+    console.log("modal lose called")
+    document.getElementById("losingModal").style.display = "block"
+  }
+
