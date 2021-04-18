@@ -54,12 +54,10 @@ const checkingTheColors = () => {
     console.log(userSimonColors)
     console.log(generatedSimonColors)
     // take these two lines out ^
-
     if (userSimonColors.length === generatedSimonColors.length) {
         console.log(userSimonColors.length + " length")
         let isItWrong = false
         for (let i = 0; i < generatedSimonColors.length; i++) {
-
             if (userSimonColors[i] !== generatedSimonColors[i]) {
                 isItWrong = true
                 // window.alert("You Lose. Try again!")
@@ -67,21 +65,20 @@ const checkingTheColors = () => {
                 // youLostThisGame
             }
         }
-
         console.log("isItWrong ==  " + isItWrong)
         if (isItWrong === false) {
             document.getElementById("level").innerHTML = "Level: " + generatedSimonColors.length
             document.getElementById("points").innerHTML = "Points: " + generatedSimonColors.length * 100
-           
+
             userSimonColors = []
             generateARandomSimonColor()
             flashTheSimonColors()
-                if(generatedSimonColors.length == 16){
-                    window.alert("YOU WIN!!!!!")
-                }else{
-                    window.alert("Congratulations! Proceed to the next level.")
-                }
-            
+            if (generatedSimonColors.length == 16) {
+                window.alert("YOU WIN!!!!!")
+            } else {
+                // window.alert("Congratulations! Proceed to the next level.")
+            }
+
 
         } else {
             modalLoseOn()
@@ -93,15 +90,46 @@ const generateARandomSimonColor = () => {
     generatedSimonColors.push(newColor)
 }
 const gettingColorInput = (i) => {
-    console.log("User clicked " + i)
-    userSimonColors.push(i)
-    checkingTheColors()
+    if (i == 1) {
+        setTimeout(function () {
+            document.getElementById("one").style = "background-color: #2df726"
+        }, 500);
+        setTimeout(function () {
+            document.getElementById("one").style = "background-color: #a3e048"
+            userSimonColors.push(i)
+            checkingTheColors()
+        }, 1000);
+    } else if (i == 2) {
+        setTimeout(function () {
+            document.getElementById("two").style = "background-color: #ff4038"
+        }, 500);
+        setTimeout(function () {
+            document.getElementById("two").style = "background-color: #e6261f"
+            userSimonColors.push(i)
+            checkingTheColors()
+        }, 1000);
+    }else if (i == 3){
+        setTimeout(function () {
+            document.getElementById("three").style = "background-color: #ffe716"
+        }, 500);
+        setTimeout(function () {
+            document.getElementById("three").style = "background-color: #f7d038"
+            userSimonColors.push(i)
+            checkingTheColors()
+        }, 1000);
+    } else if (i == 4){
+        setTimeout(function () {
+            document.getElementById("four").style = "background-color: #2279e3"
+        }, 500);
+        setTimeout(function () {
+            document.getElementById("four").style = "background-color: #4355db"
+            userSimonColors.push(i)
+            checkingTheColors()
+        }, 1000);
+    }
+    // console.log("User clicked " + i)
+    
 }
-
-// document.getElementById("one").style = "background-color: white"
-// document.getElementById("one").style = "background-color: green"
-
-
 const flashTheSimonColors = () => {
 
     for (let i = 0; i <= generatedSimonColors.length - 1; i++) {
@@ -116,13 +144,13 @@ const flashTheSimonColors = () => {
 
             setTimeout(function () {
 
-                document.getElementById("one").style = "background-color: white";
+                document.getElementById("one").style = "background-color: #2df726";
 
             }, (((i + 1) * 2) - 1) * 1000);
 
             setTimeout(function () {
 
-                document.getElementById("one").style = "background-color: green";
+                document.getElementById("one").style = "background-color: #a3e048";
 
             }, ((i + 1) * 2 * 1000));
 
@@ -132,24 +160,24 @@ const flashTheSimonColors = () => {
 
 
             setTimeout(function () {
-                document.getElementById("two").style = "background-color: white"
+                document.getElementById("two").style = "background-color: #ff4038"
 
             }, (((i + 1) * 2) - 1) * 1000);
             setTimeout(function () {
-                document.getElementById("two").style = "background-color: red"
+                document.getElementById("two").style = "background-color: #e6261f"
 
             }, ((i + 1) * 2 * 1000));
         }
         else if (generatedSimonColors[i] == 3) {
             setTimeout(function () {
 
-                document.getElementById("three").style = "background-color: white";
+                document.getElementById("three").style = "background-color: #ffe716";
 
             }, (((i + 1) * 2) - 1) * 1000);
 
             setTimeout(function () {
 
-                document.getElementById("three").style = "background-color: yellow";
+                document.getElementById("three").style = "background-color: #f7d038";
 
             }, ((i + 1) * 2 * 1000));
 
@@ -159,13 +187,13 @@ const flashTheSimonColors = () => {
 
             setTimeout(function () {
 
-                document.getElementById("four").style = "background-color: white";
+                document.getElementById("four").style = "background-color: #2279e3";
 
             }, (((i + 1) * 2) - 1) * 1000);
 
             setTimeout(function () {
 
-                document.getElementById("four").style = "background-color: blue";
+                document.getElementById("four").style = "background-color: #4355db";
 
             }, ((i + 1) * 2 * 1000));
 
@@ -208,3 +236,10 @@ modalLoseOn = () => {
     document.getElementById("losingModal").style.display = "block"
 }
 
+// ----------------reset button------------
+const clickedTheResetButton = () => {
+    generatedSimonColors = []
+    userSimonColors = []
+    document.getElementById("level").innerHTML = "Level: " 
+    document.getElementById("points").innerHTML = "Points: "
+}
