@@ -25,17 +25,11 @@ console.log('simon app.js')
 // -use .push to push random number into an array from Math.floor
 // -use .push to push answers from DOM into an array
 
+// -create pop up window for when they lose
 //  =============  HERE ->  ================
 
 // popup box says: 
-// -create pop up windows for when they proceed to the next level 
 // -have baloons or confetti for when they win
-
-// -create pop up window for when they lose
-
-// -possibly create two backgrounds one for knights and a dragon 
-// -one for princess finding her rabbit
-// -make avitars move when they recieve points
 
 // ====================================================
 // This JavaScript function always returns a random number between min and max (both included):
@@ -73,8 +67,9 @@ const checkingTheColors = () => {
             userSimonColors = []
             generateARandomSimonColor()
             flashTheSimonColors()
-            if (generatedSimonColors.length == 16) {
-                window.alert("YOU WIN!!!!!")
+            if (generatedSimonColors.length == 4) {
+                // window.alert("YOU WIN!!!!!")
+                modalWinOn()
             } else {
                 // window.alert("Congratulations! Proceed to the next level.")
             }
@@ -242,4 +237,21 @@ const clickedTheResetButton = () => {
     userSimonColors = []
     document.getElementById("level").innerHTML = "Level: " 
     document.getElementById("points").innerHTML = "Points: "
+}
+
+// ----------------------winning modal---------------------------
+var winningModal = document.getElementById("winningModal");
+var winningSpan = document.getElementsByClassName("close")[2];
+
+winningSpan.onclick = function () {
+    winningModal.style.display = "none";
+}
+window.onclick = function (event) {
+    if (event.target == winningModal) {
+        winningModal.style.display = "none";
+    }
+}
+modalWinOn = () => {
+    console.log("winning model called")
+    document.getElementById("winningModal").style.display = "block"
 }
