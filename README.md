@@ -1,6 +1,6 @@
-# H1 Simon
+# Simon
 
-### H3 by Desiree Joya
+### by Desiree Joya
 
 - This game was made with Javascript, HTML, and CSS
 
@@ -10,4 +10,4 @@
 
 - To run the actual code separately, download the code and click run in browser from an editor. 
 
-- the robot gifs are from [title](https://www.tenor.com) artist is unknown
+- The robot gifs are from [Tenor.com](https://www.tenor.com) artist is unknown.
