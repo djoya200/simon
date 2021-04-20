@@ -36,7 +36,7 @@ const checkingTheColors = () => {
     }
 }
 const generateARandomSimonColor = () => {
-    var newColor = Math.floor(Math.random() * (4 - 1)) + 1;
+    var newColor = Math.floor(Math.random() * (4)) + 1;
     generatedSimonColors.push(newColor)
 }
 const gettingColorInput = (i) => {
